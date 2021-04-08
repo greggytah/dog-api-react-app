@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.dogCard {
+  padding: 10px 0;
+}
+
+.dogImage {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  float: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.inputBoxHeading {
+  margin-bottom: 10px;
+}
+
+.dogName {
+  position: absolute;
+  color: white;
+  text-transform: capitalize;
+}
