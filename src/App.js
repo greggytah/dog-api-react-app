@@ -11,7 +11,6 @@ const App = () => {
     let allDogBreeds = [];
     axios.get('https://dog.ceo/api/breeds/list/all')
       .then((response) => {
-        console.log(response)
         const dogBreeds = response.data.message;
         for (const dogBreed in dogBreeds) {
           if(!!dogBreeds[dogBreed].length) {
