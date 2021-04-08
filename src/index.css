@@ -40,6 +40,7 @@ code {
 
 .dogName {
   position: absolute;
-  color: white;
+  color: #ffffcc;
   text-transform: capitalize;
+  font-size: 20px;
 }
