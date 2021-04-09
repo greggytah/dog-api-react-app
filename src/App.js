@@ -11,7 +11,6 @@ const App = () => {
     let allDogBreeds = [];
     axios.get('https://dog.ceo/api/breeds/list/all')
       .then((response) => {
-        console.log(response)
         const dogBreeds = response.data.message;
         for (const dogBreed in dogBreeds) {
           if(!!dogBreeds[dogBreed].length) {
@@ -42,6 +41,7 @@ const App = () => {
   }, []);
 
   function searchDogs (dogs) {
+    if(!query) return dogs;
     return dogs.filter(dog => dog.name.toLowerCase().includes(query))
   }
 
@@ -54,10 +54,15 @@ const App = () => {
         <h4 className="inputBoxHeading">Find Your Breed!</h4>
         <input type="text" value={query} onChange={(e) => setQuery(e.target.value.toLowerCase())}/>
       </div>
-
-      <div>
-        <DogBreedsTable dogs={searchDogs(dogs)}/>
-      </div>
+      {!!dogs.length ?
+        <div>
+          <DogBreedsTable dogs={searchDogs(dogs)}/>
+        </div>
+        :
+        <div>
+          <h4 className="center">Start typing to find your breed of dog</h4>
+        </div>
+      }
     </div>
   )
 };

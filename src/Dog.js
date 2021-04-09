@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Dog ({ dog }) {
+const Dog = ({ dog }) => {
 
   return (
     <div className="dogCard">
@@ -9,3 +9,5 @@ export default function Dog ({ dog }) {
     </div>
   )
 };
+
+export default Dog;
